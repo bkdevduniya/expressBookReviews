@@ -1,11 +1,11 @@
 const express = require('express');
-const axios = require('axios'); // Add this line
+const axios = require('axios');
 let books = require("./booksdb.js");
 let isValid = require("./auth_users.js").isValid;
 let users = require("./auth_users.js").users;
 const public_users = express.Router();
 
-// Task 6: Register
+// Task 6: Register - at root /register
 public_users.post("/register", (req, res) => {
   const { username, password } = req.body;
   
@@ -26,7 +26,7 @@ public_users.get('/', function (req, res) {
   res.send(JSON.stringify(books, null, 4));
 });
 
-// Task 10: Get all books using Axios (Promise)
+// Task 10: Get all books using Axios
 public_users.get('/async-books', async function (req, res) {
   try {
     const response = await axios.get('http://localhost:5001/');
