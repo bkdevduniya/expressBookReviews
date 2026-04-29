@@ -1,0 +1,4 @@
+theia@theia-bhoodev6232:/home/project$ curl -X POST http://localhost:5001/customer/register \
+  -H "Content-Type: application/json" \
+  -d '{"username":"john_doe","password":"password123"}'
+{"message":"User registered successfully. You can now login."}theia@theia-bhoodev6232:/home/project$ 

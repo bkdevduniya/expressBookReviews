@@ -1,0 +1,26 @@
+theia@theia-bhoodev6232:/home/project$ curl -c cookies_john.txt -X POST http://localhost:5001/ccurl -c cookies_john.txt -X POST http://localhost:5001/customer/login \
+  -H "Content-Type: application/json" \
+  -d '{"username":"john_doe","password":"password123"}'
+{"message":"User successfully logged in","token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImpvaG5fZG9lIiwiaWF0IjoxNzc3NDkzOTE1LCJleHAiOjE3Nzc0$ curl -b cookies_john.txt -X PUT "http://localhost:5001/customer/auth/review/1?review=This%20book%20is%20absolutely%20fantastic%21%20Highly%20recommended" \calhost:5001/customer/auth/review/1?re
+  -H "Content-Type: application/json"
+{"message":"Review added successfully","isbn":"1","username":"john_doe","review":"This book is absolutely fantastic! Highly recommended","all_reviews_for_book":{"john_doe":"This book is absolutely fantastic! Highly recommended"}}theia@theia-bhoodev6232:/home/project$ ^C
+theia@theia-bhoodev6232:/home/project$ ^C
+theia@theia-bhoodev6232:/home/project$ curl -b cookies_john.txt -X PUT "http://localhost:5001/customer/auth/review/1?review=This%20book%20is%20absolutely%20fantastic%21%20Highly%20recommended" \
+  -H "Content-Type: application/json"
+{"message":"Review modified successfully","isbn":"1","username":"john_doe","review":"This book is absolutely fantastic! Highly recommended","all_reviews_for_book":{"john_doe":"This book is absolutely fantastic! Highly recommended"}}theia@theia-bhoodev6232:/home/project$ curlcurl -X POST http://localhost:5001/customer/register \
+  -H "Content-Type: application/json" \
+  -d '{"username":"jane_smith","password":"jane123"}'
+{"message":"User registered successfu$ curl -b cookies_john.txt -X PUT "http://localhost:5001/customer/auth/review/8?review=Pride%20and%20Prejudice%20is%20a%20timeless%20classic" \e
+  -H "Content-Type: application/json"
+{"message":"Review added successfuassic","all_reviews_for_book":{"jo
+theia@theia-bhoodev6232:/home/projtheia@theia-bhoodev6232:/home/project$ c cookies_john.txt -X PUT "ht
+url -b cookies_john.txt -X PUT "http://localhost:5001/customer/auth/review/3?review=1984%20is%20scarily%20prophetic" \pe: application/js
+  -H "Content-Type: application/json"
+{"message":"Review added successfully","isbn":"3","username":"john_doe","review":"1984 is scarily prophetic","all_reviews_for_book":{"john_doe":"1984 is scarily prophetic"}}theia@theia-bhoodev6232:/home/proj
+ect$ curl curl -c cookies_jane.txt -X POST http://localhost:5001/customer/login \
+  -H "Content-Type: application/json" \
+  -d '{"username":"jane_smith","password":"jane123"}'
+{"message":"User successfully logged in","token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImphbmVfc21pdGgiLCJpYXQiOjE3Nzc0OTQwOTIsImV4cCI6MTc3NzQ5NzY5Mn0.C9M8ems3cYKnVCQzI4QwhYwuSzHRGD7xeWS8rM25eMU","username":"jane_smith"}theia@theia-bhoodev6232:/home/proj
+ect$ curl -b cookies_jane.txt -X PUT "http://localhost:5001/customer/auth/review/1?review=Jane%27s%20perspective%3A%20A%20different%20take%20on%20this%20classic" \
+  -H "Content-Type: application/json"
+{"message":"Review added successfully","isbn":"1","username":"jane_smith","review":"Jane's perspective: A different take on this classic","all_reviews_for_book":{"john_doe":"This book is absolutely fantastic! Highly recommended","jane_stheia@theia-bhoodev6232:/home/project$ take on this classic"}}theia@theia-bhoodev6232:/home/proj

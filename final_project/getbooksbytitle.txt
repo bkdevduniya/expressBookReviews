@@ -1,0 +1,9 @@
+theia@theia-bhoodev6232:/home/project$ ctp://localhost:5001/title/Pr
+url http://localhost:5001/title/Pride%20and%20Prejudice
+{
+    "isbn": "8",
+    "title": "Pride and Prejudice",
+    "author": "Jane Austen",
+    "reviews": {}
+}theia@theia-bhoodev6232:/home/proj
+ect$ 

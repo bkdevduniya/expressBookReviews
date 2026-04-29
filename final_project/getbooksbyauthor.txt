@@ -1,0 +1,8 @@
+theia@theia-bhoodev6232:/home/project$curl http://localhost:5001/author/jane%20austenn
+[
+    {
+        "isbn": "8",
+        "title": "Pride and Prejudice",
+        "author": "Jane Austen"
+    }
+]theia@theia-bhoodev6232:/home/project$ 

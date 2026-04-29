@@ -1,0 +1,66 @@
+theia@theia-bhoodev6232:/home/project$ curl -b cookies_john.txt -X DELETE http://localhost:5001/customer/auth/review/1 \
+  -H "Content-Type: application/json"
+{"message":"Review deleted successfully","deleted_review":"This book is absolutely fantastic! Highly recommended","remaining_reviews":{"jane_smith":"Jane's perspective: A different take on this classic"}}theia@theia-bhoodev6232:/home/project$ # Try to delete a review that $ # Try to delete a review that doesn't exist for this user
+curl -b cookies_john.txt -X DELETE http://localhost:5001/customer/auth/review/2 \
+  -H "Content-Type: application/json"
+{"message":"You don't have a review for this book to delete","your_reviews":{"3":"1984 is scarily prophetic","8":"Pride and Prejudice is a timeless classic$ # Delete jane_smith's review for book 1 # Delete jane_smith's review for book 1
+curl -b cookies_jane.txt -X DELETE http://localhost:5001/customer/auth/review/1 \
+  -H "Content-Type: application/json"
+{"message":"Review deleted successfully","deleted_review":"Jane's perspective: A different take on this classic","remaining_reviews":{}}theia@theia-bhoodev6232:/home/project$ curl http://localhost:5001/review/1
+{"message":"No reviews found for this book."}theia@theia-bhoodev6232:/home/project$ curl http://localhost:5001/
+{
+    "1": {
+        "author": "Chinua Achebe",
+        "title": "Things Fall Apart",
+        "reviews": {}
+    },
+    "2": {
+        "author": "Hans Christian Andersen",
+        "title": "Fairy tales",
+        "reviews": {}
+    },
+    "3": {
+        "author": "Dante Alighieri",
+        "title": "The Divine Comedy",
+        "reviews": {
+            "john_doe": "1984 is scarily prophetic"
+        }
+    },
+    "4": {
+        "author": "Unknown",
+        "title": "The Epic Of Gilgamesh",
+        "reviews": {}
+    },
+    "5": {
+        "author": "Unknown",
+        "title": "The Book Of Job",
+        "reviews": {}
+    },
+    "6": {
+        "author": "Unknown",
+        "title": "One Thousand and One Nights",
+        "reviews": {}
+    },
+    "7": {
+        "author": "Unknown",
+        "title": "Njál's Saga",
+        "reviews": {}
+    },
+    "8": {
+        "author": "Jane Austen",
+        "title": "Pride and Prejudice",
+        "reviews": {
+            "john_doe": "Pride and Prejudice is a timeless classic"
+        }
+    },
+    "9": {
+        "author": "Honoré de Balzac",
+        "title": "Le Père Goriot",
+        "reviews": {}
+    },
+    "10": {
+        "author": "Samuel Beckett",
+        "title": "Molloy, Malone Dies, The Unnamable, the trilogy",
+        "reviews": {}
+    }
+}theia@theia-bhoodev6232:/home/project$ 

@@ -1,0 +1,6 @@
+theia@theia-bhoodev6232:/home/project$ curl http://localhost:5001/isbn/1
+{
+    "author": "Chinua Achebe",
+    "title": "Things Fall Apart",
+    "reviews": {}
+}theia@theia-bhoodev6232:/home/project$ 

@@ -1,0 +1,4 @@
+theia@theia-bhoodev6232:/home/project$ curl -c cookies_john.txt -X POST http://localhost:5001/ccurl -c cookies_john.txt -X POST http://localhost:5001/customer/login \
+  -H "Content-Type: application/json" \
+  -d '{"username":"john_doe","password":"password123"}'
+{"message":"User successfully logged in","token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImpvaG5fZG9lIiwiaWF0IjoxNzc3NDkzOTE1LCJleHAiOjE3Nzc0OTc1MTV9.xp7xpkdSdNWwOL5jZkKXD5mMOPk0KrqXE9ZP1NaTCrU","username":"john_doe"}theia@theia-bhoodev6232:/home/project$ 
