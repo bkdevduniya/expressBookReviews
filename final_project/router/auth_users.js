@@ -14,7 +14,7 @@ const authenticatedUser = (username, password) => {
   return user && user.password === password;
 };
 
-// Task 7: Login - MUST return exact format
+// Task 7: Login
 regd_users.post("/login", (req, res) => {
   const { username, password } = req.body;
   
@@ -30,21 +30,20 @@ regd_users.post("/login", (req, res) => {
       username: username
     };
     
-    // CRITICAL: Must return this EXACT format
     return res.status(200).json({ message: "Customer successfully logged in" });
   } else {
     return res.status(401).json({ message: "Invalid username or password" });
   }
 });
 
-// Task 8: Add or modify a book review
+// Task 8: Add or modify a book review - NOTE: endpoint is /review (no /customer)
 regd_users.put("/review/:isbn", (req, res) => {
   const isbn = req.params.isbn;
   const review = req.query.review;
   const username = req.session.authorization?.username;
   
   if (!username) {
-    return res.status(401).json({ message: "You must be logged in to add/modify a review" });
+    return res.status(401).json({ message: "You must be logged in" });
   }
   
   if (!review) {
@@ -56,28 +55,25 @@ regd_users.put("/review/:isbn", (req, res) => {
     return res.status(404).json({ message: "Book not found" });
   }
   
-  // Initialize reviews if not exists
   if (!book.reviews) {
     book.reviews = {};
   }
   
-  // Add or modify review
   book.reviews[username] = review;
   
-  // Return with reviews object (required by grader)
   return res.status(200).json({ 
     message: "Review added successfully", 
     reviews: book.reviews 
   });
 });
 
-// Task 9: Delete a book review
+// Task 9: Delete a book review - NOTE: endpoint is /review (no /customer)
 regd_users.delete("/review/:isbn", (req, res) => {
   const isbn = req.params.isbn;
   const username = req.session.authorization?.username;
   
   if (!username) {
-    return res.status(401).json({ message: "You must be logged in to delete a review" });
+    return res.status(401).json({ message: "You must be logged in" });
   }
   
   const book = books[isbn];
@@ -86,7 +82,7 @@ regd_users.delete("/review/:isbn", (req, res) => {
   }
   
   if (!book.reviews || !book.reviews[username]) {
-    return res.status(404).json({ message: "You don't have a review for this book to delete" });
+    return res.status(404).json({ message: "No review found to delete" });
   }
   
   delete book.reviews[username];
